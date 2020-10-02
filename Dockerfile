@@ -1,8 +1,8 @@
 FROM alpine:latest as rclone
 
 # Get rclone executable
-ADD https://downloads.rclone.org/rclone-current-linux-amd64.zip /
-RUN unzip rclone-current-linux-amd64.zip && mv rclone-*-linux-amd64/rclone /bin/rclone && chmod +x /bin/rclone
+ADD https://downloads.rclone.org/v1.53.1/rclone-v1.53.1-linux-amd64.zip /
+RUN unzip -d rclone-v1.53.1-linux-amd64 rclone-v1.53.1-linux-amd64.zip && mv rclone-v1.53.1-linux-amd64/rclone /bin/rclone && chmod +x /bin/rclone
 
 FROM restic/restic:0.9.6
 
